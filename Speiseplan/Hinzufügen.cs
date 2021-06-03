@@ -12,9 +12,17 @@ namespace Speiseplan
 {
     public partial class Hinzufügen : Form
     {
+
+        internal static Hinzufügen f4;
         public Hinzufügen()
         {
             InitializeComponent();
+            f4 = this;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            return;
         }
     }
 }

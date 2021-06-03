@@ -18,21 +18,135 @@ namespace Speiseplan
     {
 
         internal static Speiseliste f3;
+        Hinzufügen f4 = new Hinzufügen();
         public Speiseliste()
         {
             InitializeComponent();
+            f3 = this;
         }
 
+        internal ListViewItem lvItem;
+
+        Datenbank db;
+        OleDbDataReader dr;
         internal string sql;
+        internal int selected;
+        internal string o, idr;
 
         private void Speiseliste_Load(object sender, EventArgs e)
         {
             f3 = this;
+            db = new Datenbank();
+            selectVS();
+            o = "Vorspeise";
+            idr = "ID_V";
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             f3.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            selectVS();
+            o = "Vorspeise";
+            idr = "ID_V";
+        }
+
+
+        #region methoden
+        internal void selectVS()
+        {
+            listView1.Items.Clear();
+
+            sql = "Select * from Vorspeise;";
+            dr = db.Einlesen(sql);
+            while (dr.Read())
+            {
+                lvItem = new ListViewItem(dr[0].ToString());
+                lvItem.SubItems.Add(dr[1].ToString());
+                lvItem.SubItems.Add(dr[2].ToString());
+                lvItem.SubItems.Add(dr[3].ToString());
+                listView1.Items.Add(lvItem);
+            }
+        }
+
+        internal void selectHS()
+        {
+            listView1.Items.Clear();
+
+            sql = "Select * from Hauptspeise;";
+            dr = db.Einlesen(sql);
+            while (dr.Read())
+            {
+                lvItem = new ListViewItem(dr[0].ToString());
+                lvItem.SubItems.Add(dr[1].ToString());
+                lvItem.SubItems.Add(dr[2].ToString());
+                lvItem.SubItems.Add(dr[3].ToString());
+                listView1.Items.Add(lvItem);
+            }
+        }
+
+        internal void selectNS()
+        {
+            listView1.Items.Clear();
+
+            sql = "Select * from Nachspeise;";
+            dr = db.Einlesen(sql);
+            while (dr.Read())
+            {
+                lvItem = new ListViewItem(dr[0].ToString());
+                lvItem.SubItems.Add(dr[1].ToString());
+                lvItem.SubItems.Add(dr[2].ToString());
+                lvItem.SubItems.Add(dr[3].ToString());
+                listView1.Items.Add(lvItem);
+            }
+        }
+
+       
+
+
+        #endregion
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            selectHS();
+            o = "Hauptspeise";
+            idr = "ID_H";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            selectNS();
+            o = "Nachspeise";
+            idr = "ID_N";
+        }
+
+        private void hinzufügenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            f4.Text = "Hinzufügen";
+            f4.ShowDialog();
+        }
+
+        private void bearbeitenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            f4.Text = "Bearbeiten";
+            f4.ShowDialog();
+        }
+
+        private void löschenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lvItem = listView1.SelectedItems[0];
+
+            if (listView1.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Bitte wählen Sie einen Kunden zum löschen aus oder achten Sie darauf ob laufenden Rechnungen exestieren", "Achtung:", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            selected = listView1.SelectedItems[0].Index;
+            sql = "DELETE * from "+ o + " WHERE "+ idr +" = " + lvItem.SubItems[0].Text + ";";
         }
     }
 }
