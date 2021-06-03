@@ -12,6 +12,8 @@ namespace Speiseplan
 {
     public partial class Form1 : Form
     {
+        Speiseplan f2 = new Speiseplan();
+        Speiseliste f3 = new Speiseliste();
         public Form1()
         {
             InitializeComponent();
@@ -19,12 +21,19 @@ namespace Speiseplan
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            Speiseplan f2 = new Speiseplan();
+            f2.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
-        {
+        {            
             Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Speiseliste f3 = new Speiseliste();
+            f3.ShowDialog();
         }
     }
 }

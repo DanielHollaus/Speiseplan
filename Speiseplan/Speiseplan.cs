@@ -12,9 +12,17 @@ namespace Speiseplan
 {
     public partial class Speiseplan : Form
     {
+       
+        Speiseliste f3 = new Speiseliste();
         public Speiseplan()
         {
+            
             InitializeComponent();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }
