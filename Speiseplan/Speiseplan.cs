@@ -25,6 +25,7 @@ namespace Speiseplan
             f2 = this;
             InitializeComponent();
         }
+        internal string sql;
 
         private void button3_Click(object sender, EventArgs e)
         {

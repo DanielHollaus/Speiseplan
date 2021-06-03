@@ -23,6 +23,8 @@ namespace Speiseplan
             InitializeComponent();
         }
 
+        internal string sql;
+
         private void button1_Click(object sender, EventArgs e)
         {
             Speiseplan f2 = new Speiseplan();

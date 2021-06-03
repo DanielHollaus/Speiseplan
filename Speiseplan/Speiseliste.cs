@@ -23,6 +23,8 @@ namespace Speiseplan
             InitializeComponent();
         }
 
+        internal string sql;
+
         private void Speiseliste_Load(object sender, EventArgs e)
         {
             f3 = this;
