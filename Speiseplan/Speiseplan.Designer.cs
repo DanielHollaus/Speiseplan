@@ -55,7 +55,7 @@
             this.columnHeader6});
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(0, 0);
-            this.listView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listView1.Margin = new System.Windows.Forms.Padding(4);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(1065, 472);
             this.listView1.TabIndex = 0;
@@ -95,7 +95,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(795, 484);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(256, 55);
             this.button1.TabIndex = 1;
@@ -105,7 +105,7 @@
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(16, 484);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(248, 55);
             this.button3.TabIndex = 3;
@@ -142,9 +142,10 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listView1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Speiseplan";
             this.Text = "Speiseplan";
+            this.Load += new System.EventHandler(this.Speiseplan_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 

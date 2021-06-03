@@ -45,9 +45,10 @@
             this.columnHeader2,
             this.columnHeader3});
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(27, 8);
+            this.listView1.Location = new System.Drawing.Point(36, 10);
+            this.listView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(309, 412);
+            this.listView1.Size = new System.Drawing.Size(411, 506);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -67,52 +68,59 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(393, 8);
+            this.button1.Location = new System.Drawing.Point(524, 10);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(151, 50);
+            this.button1.Size = new System.Drawing.Size(201, 62);
             this.button1.TabIndex = 1;
             this.button1.Text = "Vorspeisen";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(393, 81);
+            this.button2.Location = new System.Drawing.Point(524, 100);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(151, 50);
+            this.button2.Size = new System.Drawing.Size(201, 62);
             this.button2.TabIndex = 2;
             this.button2.Text = "Hauptspeisen";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(393, 162);
+            this.button3.Location = new System.Drawing.Point(524, 199);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(151, 50);
+            this.button3.Size = new System.Drawing.Size(201, 62);
             this.button3.TabIndex = 3;
             this.button3.Text = "Nachspeisen";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(393, 370);
+            this.button4.Location = new System.Drawing.Point(524, 455);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(151, 50);
+            this.button4.Size = new System.Drawing.Size(201, 62);
             this.button4.TabIndex = 4;
             this.button4.Text = "Exit";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Speiseliste
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(556, 450);
+            this.ClientSize = new System.Drawing.Size(741, 554);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listView1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Speiseliste";
             this.Text = "Speiseliste";
+            this.Load += new System.EventHandler(this.Speiseliste_Load);
             this.ResumeLayout(false);
 
         }
