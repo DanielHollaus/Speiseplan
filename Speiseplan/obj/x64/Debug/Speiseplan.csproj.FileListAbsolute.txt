@@ -11,3 +11,15 @@ C:\Users\holla\Desktop\Schule\4CK\SWE\Speiseplan\Speiseplan\Speiseplan\obj\x64\D
 C:\Users\holla\Desktop\Schule\4CK\SWE\Speiseplan\Speiseplan\Speiseplan\obj\x64\Debug\Speiseplan.csproj.CoreCompileInputs.cache
 C:\Users\holla\Desktop\Schule\4CK\SWE\Speiseplan\Speiseplan\Speiseplan\obj\x64\Debug\Speiseplan.exe
 C:\Users\holla\Desktop\Schule\4CK\SWE\Speiseplan\Speiseplan\Speiseplan\obj\x64\Debug\Speiseplan.pdb
+C:\Users\easyg\OneDrive\Desktop\Schule\4CK\SWE\Speiseplan\Speiseplan\Speiseplan\bin\x64\Debug\Speiseplan.exe.config
+C:\Users\easyg\OneDrive\Desktop\Schule\4CK\SWE\Speiseplan\Speiseplan\Speiseplan\bin\x64\Debug\Speiseplan.exe
+C:\Users\easyg\OneDrive\Desktop\Schule\4CK\SWE\Speiseplan\Speiseplan\Speiseplan\bin\x64\Debug\Speiseplan.pdb
+C:\Users\easyg\OneDrive\Desktop\Schule\4CK\SWE\Speiseplan\Speiseplan\Speiseplan\obj\x64\Debug\Speiseplan.Form1.resources
+C:\Users\easyg\OneDrive\Desktop\Schule\4CK\SWE\Speiseplan\Speiseplan\Speiseplan\obj\x64\Debug\Speiseplan.Hinzufügen.resources
+C:\Users\easyg\OneDrive\Desktop\Schule\4CK\SWE\Speiseplan\Speiseplan\Speiseplan\obj\x64\Debug\Speiseplan.Properties.Resources.resources
+C:\Users\easyg\OneDrive\Desktop\Schule\4CK\SWE\Speiseplan\Speiseplan\Speiseplan\obj\x64\Debug\Speiseplan.Speiseliste.resources
+C:\Users\easyg\OneDrive\Desktop\Schule\4CK\SWE\Speiseplan\Speiseplan\Speiseplan\obj\x64\Debug\Speiseplan.Speiseplan.resources
+C:\Users\easyg\OneDrive\Desktop\Schule\4CK\SWE\Speiseplan\Speiseplan\Speiseplan\obj\x64\Debug\Speiseplan.csproj.GenerateResource.cache
+C:\Users\easyg\OneDrive\Desktop\Schule\4CK\SWE\Speiseplan\Speiseplan\Speiseplan\obj\x64\Debug\Speiseplan.csproj.CoreCompileInputs.cache
+C:\Users\easyg\OneDrive\Desktop\Schule\4CK\SWE\Speiseplan\Speiseplan\Speiseplan\obj\x64\Debug\Speiseplan.exe
+C:\Users\easyg\OneDrive\Desktop\Schule\4CK\SWE\Speiseplan\Speiseplan\Speiseplan\obj\x64\Debug\Speiseplan.pdb
