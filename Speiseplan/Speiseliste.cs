@@ -125,14 +125,15 @@ namespace Speiseplan
 
         private void hinzufügenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            f4.Text = "Hinzufügen";
-            f4.ShowDialog();
+            Hinzufügen.f4.Text = "Hinzufügen";
+            Hinzufügen.f4.ShowDialog();
+           
         }
 
         private void bearbeitenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            f4.Text = "Bearbeiten";
-            f4.ShowDialog();
+            Hinzufügen.f4.Text = "Bearbeiten";
+            Hinzufügen.f4.ShowDialog();
         }
 
         private void löschenToolStripMenuItem_Click(object sender, EventArgs e)
@@ -141,12 +142,15 @@ namespace Speiseplan
 
             if (listView1.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Bitte wählen Sie einen Kunden zum löschen aus oder achten Sie darauf ob laufenden Rechnungen exestieren", "Achtung:", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bitte wählen Sie einen Speisee zum löschen aus", "Achtung:", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             selected = listView1.SelectedItems[0].Index;
             sql = "DELETE * from "+ o + " WHERE "+ idr +" = " + lvItem.SubItems[0].Text + ";";
+
+            db.Ausfuehren(sql);
+            db.Einlesen(sql);
         }
     }
 }
