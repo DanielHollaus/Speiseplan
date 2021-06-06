@@ -30,7 +30,7 @@ namespace Speiseplan
         internal string sql;
         Datenbank db;
         OleDbDataReader dr;
-        internal int selected;
+        internal int selected, idV, idN, idH;
         internal string o, idr;
 
         private void button3_Click(object sender, EventArgs e)
@@ -84,6 +84,26 @@ namespace Speiseplan
                 listView1.Items.Add(lvItem2);
             }
         }
+
+        internal void idlesen()
+        {
+            string sql = "Select ID_V from Vorspeise";
+            dr = db.Einlesen(sql);
+            while (dr.Read())
+            {
+                idV = Convert.ToInt32(dr[0]);
+            }
+
+        }
+
+
+        internal void randomzahl()
+        {
+
+
+
+        }
+
         
     }
 }

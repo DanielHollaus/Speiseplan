@@ -18,7 +18,7 @@ namespace Speiseplan
     {
 
         internal static Hinzufügen f4;
-        Speiseliste f3 = new Speiseliste();
+        //Speiseliste f3 = new Speiseliste();
         public Hinzufügen()
         {
             InitializeComponent();
@@ -49,32 +49,44 @@ namespace Speiseplan
                     {
 
                         //int id = Convert.ToInt32(textBox1.Text);
-                        string bezeeichnung = textBox2.Text;
-                        double preis = Convert.ToDouble(textBox3.Text);
+                        string bezeeichnung = textBox1.Text;
+                        double preis = Convert.ToDouble(textBox2.Text);
                         string bild = textBox3.Text;
 
 
-                        f3.sql = "UPDATE " + ab +" SET Bildpfad = '" + bild + "', Bezeichnung = '" + bezeeichnung + "', Preis = '" + preis+"; ";
-                        db.Ausfuehren(f3.sql);
+                        Speiseliste.f3.sql = "UPDATE " + ab + " SET Bildpfad = '" + bild + "', Bezeichnung = '" + bezeeichnung + "', Preis = '" + preis + "; ";
+                        db.Ausfuehren(Speiseliste.f3.sql);
+                    }
+                    else
+                    {
+                        string bezeeichnung = textBox1.Text;
+                        double preis = Convert.ToDouble(textBox2.Text);
+                        string bild = textBox3.Text;
+
+
+                        Speiseliste.f3.sql = "INSERT into " + ab + "Bildpfad, Bezeichnung, Preis) values('" + bild + "','" + bezeeichnung + "', '" + preis + "; ";
+                        db.Ausfuehren(Speiseliste.f3.sql);
+
                     }
 
-                    //else
-                    //{
-                    //    string unternehmen = txtUnternehmen.Text;
-                    //    string ansprechperson = txtAnzeige.Text;
-                    //    string telefon = txtTelefon.Text;
-                    //    string email = txtEmail.Text;
-                    //    string strasse = txtStraße.Text;
-                    //    string zahlungskondition = txtZahlung.Text;
-                    //    int postleitzahlID = Convert.ToInt32(txtPLZ.Text);
 
-                    //    f3.sql = "Insert into Kunde (Unternehmen, Ansprechperson, Telefon, Email, Strasse, Zahlungskondition, PostleitzahlID) values ('" + unternehmen + "', '" + ansprechperson + "', '" + telefon + "', '" + email + "', '" + strasse + "', '" + zahlungskondition + "', " + postleitzahlID + " );";
-                    //    db.Ausfuehren(f3.sql);
+                    if(ab.Equals("Vorspeise"))
+                    {
+                        Speiseliste.f3.selectVS();
 
-                    //}
-
+                    }
+                    else if(ab.Equals("Hauptspeise"))
+                    {
+                        Speiseliste.f3.selectHS();
+                    }
+                    else
+                    {
+                        Speiseliste.f3.selectNS();
+                    }
 
                     this.Close();
+
+
 
 
                 }
@@ -90,7 +102,7 @@ namespace Speiseplan
         {
             f4 = this;
             db = new Datenbank();
-            ab = f3.o;
+            ab = Speiseliste.f3.o;
         }
     }
 }

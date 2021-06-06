@@ -132,7 +132,20 @@ namespace Speiseplan
 
         private void bearbeitenToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            lvItem = listView1.SelectedItems[0];
+
+            if (listView1.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Bitte wählen Sie einen Teilnehmer zum Bearbeiten aus!", "Achtung:", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            selected = listView1.SelectedItems[0].Index;
+
             Hinzufügen.f4.Text = "Bearbeiten";
+            f4.textBox1.Text = lvItem.SubItems[2].Text;
+            f4.textBox2.Text = lvItem.SubItems[0].Text;
+            f4.textBox3.Text = lvItem.SubItems[1].Text;
+
             Hinzufügen.f4.ShowDialog();
         }
 
