@@ -25,7 +25,13 @@ namespace Speiseplan
             f2 = this;
             InitializeComponent();
         }
+
+        internal ListViewItem lvItem1, lvItem2;
         internal string sql;
+        Datenbank db;
+        OleDbDataReader dr;
+        internal int selected;
+        internal string o, idr;
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -36,6 +42,48 @@ namespace Speiseplan
         {
             listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
             listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            db = new Datenbank();
+            wochentage();
+            vorspeisen();
         }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void wochentage()
+        {
+            string sql = "Select * from Wochentag";
+            dr = db.Einlesen(sql);
+            while (dr.Read())
+            {
+                lvItem1 = new ListViewItem(dr[0].ToString());
+                lvItem1.SubItems.Add(dr[1].ToString());
+                listView1.Items.Add(lvItem1);
+            }
+
+            
+        }
+
+        private void vorspeisen()
+        {
+            string sql = "Select * from Vorspeise";
+            dr = db.Einlesen(sql);
+            while (dr.Read())
+            {
+                lvItem2 = new ListViewItem(dr[0].ToString());
+                lvItem2.SubItems.Add(dr[1].ToString());
+                lvItem2.SubItems.Add(dr[2].ToString());
+                lvItem2.SubItems.Add(dr[3].ToString());
+                listView1.Items.Add(lvItem2);
+            }
+        }
+        
     }
 }
