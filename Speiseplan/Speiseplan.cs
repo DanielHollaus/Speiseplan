@@ -112,7 +112,7 @@ namespace Speiseplan
                 idV = Convert.ToInt32(dr[0]);
                 
             }
-            int arnd = rnd.Next(idV);
+            int arnd = rnd.Next(1, idV);
             sql = "Select * from Vorspeise Where ID_V = " + arnd;
             dr = db.Einlesen(sql);
             while (dr.Read())
@@ -134,7 +134,7 @@ namespace Speiseplan
                 idH = Convert.ToInt32(dr[0]);
                 
             }
-            int arnd = rnd.Next(idH);
+            int arnd = rnd.Next(1, idH);
             sql = "Select * from Hauptspeise Where ID_H = " + arnd;
             dr = db.Einlesen(sql);
             while (dr.Read())
@@ -158,7 +158,7 @@ namespace Speiseplan
                 idN = Convert.ToInt32(dr[0]);
                 
             }
-            int arnd = rnd.Next(idN);
+            int arnd = rnd.Next(1, idN);
             sql = "Select * from Nachspeise Where ID_N = " + arnd;
             dr = db.Einlesen(sql);
             while (dr.Read())
