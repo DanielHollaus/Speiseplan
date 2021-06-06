@@ -45,6 +45,7 @@ namespace Speiseplan
         private void button4_Click(object sender, EventArgs e)
         {
             f3.Close();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -132,21 +133,48 @@ namespace Speiseplan
 
         private void bearbeitenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            lvItem = listView1.SelectedItems[0];
-
-            if (listView1.SelectedItems.Count == 0)
+            try
             {
-                MessageBox.Show("Bitte wählen Sie einen Teilnehmer zum Bearbeiten aus!", "Achtung:", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                lvItem = listView1.SelectedItems[0];
+
+                if (listView1.SelectedItems.Count == 0)
+                {
+                    MessageBox.Show("Bitte wählen Sie eine Speise zum Bearbeiten aus!", "Achtung:", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                selected = listView1.SelectedItems[0].Index;
+
+                Hinzufügen.f4.Text = "Bearbeiten";
+                f4.textBox1.Text = lvItem.SubItems[2].Text;
+                f4.textBox2.Text = lvItem.SubItems[0].Text;
+                f4.textBox3.Text = lvItem.SubItems[1].Text;
+
+                Hinzufügen.f4.ShowDialog();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("bitte auswählen");
                 return;
             }
-            selected = listView1.SelectedItems[0].Index;
+        }
 
-            Hinzufügen.f4.Text = "Bearbeiten";
-            f4.textBox1.Text = lvItem.SubItems[2].Text;
-            f4.textBox2.Text = lvItem.SubItems[0].Text;
-            f4.textBox3.Text = lvItem.SubItems[1].Text;
+        private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if(Speiseplan.f2.kl == 2)
+            {
+                lvItem = listView1.SelectedItems[0];
 
-            Hinzufügen.f4.ShowDialog();
+                if (listView1.SelectedItems.Count == 0)
+                {
+                    MessageBox.Show("Bitte wählen Sie eine Speise zum ändern aus!", "Achtung:", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                selected = listView1.SelectedItems[0].Index;
+
+
+
+
+            }
         }
 
         private void löschenToolStripMenuItem_Click(object sender, EventArgs e)

@@ -26,10 +26,10 @@ namespace Speiseplan
         }
         Datenbank db;
         OleDbDataReader dr;
-        internal string ab;
+        internal string ab, bildpfad, sql, abezeichnung;
         private void button1_Click(object sender, EventArgs e)
         {
-            return;
+            Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -54,8 +54,8 @@ namespace Speiseplan
                         string bild = textBox3.Text;
 
 
-                        Speiseliste.f3.sql = "UPDATE " + ab + " SET Bildpfad = '" + bild + "', Bezeichnung = '" + bezeeichnung + "', Preis = '" + preis + "; ";
-                        db.Ausfuehren(Speiseliste.f3.sql);
+                        sql = "UPDATE " + ab + " SET Bildpfad = '" + bild + "', Bezeichnung = '" + bezeeichnung + "', Preis = " + preis + " Where bezeichnung = '" + abezeichnung + "'";
+                        db.Ausfuehren(sql);
                     }
                     else
                     {
@@ -64,8 +64,8 @@ namespace Speiseplan
                         string bild = textBox3.Text;
 
 
-                        Speiseliste.f3.sql = "INSERT into " + ab + "Bildpfad, Bezeichnung, Preis) values('" + bild + "','" + bezeeichnung + "', '" + preis + "; ";
-                        db.Ausfuehren(Speiseliste.f3.sql);
+                        sql = "INSERT into " + ab + " Bildpfad, Bezeichnung, Preis values('" + bild + "', '" + bezeeichnung + "', " + preis + "); ";
+                        db.Ausfuehren(sql);
 
                     }
 
@@ -101,8 +101,24 @@ namespace Speiseplan
         private void Hinzufügen_Load(object sender, EventArgs e)
         {
             f4 = this;
+
+            abezeichnung = textBox1.Text;
+            
+
             db = new Datenbank();
             ab = Speiseliste.f3.o;
+        }
+
+        private void pictureBox1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Images Files (*.jpg; *.jpeg; *.bmp; *.png; *.gif) | *.jpg; *.jpeg; *.bmp; *.png; *.gif";
+            ofd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox1.Image = new Bitmap(ofd.FileName);
+                bildpfad = ofd.FileName;
+            }
         }
     }
 }
